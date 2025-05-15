@@ -10,7 +10,7 @@ Este projeto faz parte do curso de Front-End e será desenvolvido em equipe por 
 | ------ | ---------- | --------------------------------- |
 | 👤 1   | [Anderson] | Layout geral + Página Inicial     |
 | 👤 2   | [Colega 1] | Página de Listagem de Produtos    |
-| 👤 3   | [Colega 2] | Página de Visualização do Produto |
+| 👤 3   | [Nailton] | Página de Visualização do Produto |
 
 > Observação: todos podem revisar e ajudar nas tarefas uns dos outros via Pull Request!
 
