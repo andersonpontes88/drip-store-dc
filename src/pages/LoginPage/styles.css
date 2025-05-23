@@ -1,9 +1,10 @@
 .container {
   width: 100%;
-  height: 850px;
+  min-height: 850px;
   display: flex;
   justify-content: center;
-  padding: 120px 30px 163px 100px;
+  padding: 30px 30px 30px 30px;
+  padding-top: 300px;
   background: var(
     --secondary-gradient,
     linear-gradient(180deg, #b5b6f2 0%, #efefff 100%)
@@ -21,6 +22,8 @@
 
 .container-form {
   position: absolute;
+  margin-left: 50px;
+  margin-top: 70px;
   height: 560px;
   width: 583px;
   padding: 30px;
@@ -35,40 +38,21 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 
-.container-form form div {
+.container-form form .form-group {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-
   width: 100%;
-  height: 100vh;
-  display: flex;
-  margin: 0 auto;
-  padding: 0;
-  background: var(
-    --secondary-gradient,
-    linear-gradient(180deg, #b5b6f2 0%, #efefff 100%)
-  );
-  overflow-x: hidden;
-}
-
-.container-form {
-  position: absolute;
-  margin-left: 50px;
-  margin-top: 70px;
-  width: 583px;
-  padding: 30px;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: var(--white, #ffffff);
-  border-radius: 4px;
+  margin-bottom: 20px;
 }
 
 .login-title {
-  width: 523px;
+  width: 100%;
+  max-width: 523px;
   margin-bottom: 10px;
   text-align: left;
   color: var(--dark-gray, #1f1f1f);
@@ -99,21 +83,6 @@
 }
 
 .input {
-  width: 523px;
-  height: 60px;
-  flex-shrink: 0;
-  border-radius: 8px;
-  background: var(--dark-gray-2, #474747);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 10px auto;
-  padding: 0 16px;
-  gap: 10px;
-  overflow: visible;
-  opacity: 0.1;
-  /* transition: background 0.3s ease; */
-
   width: 100%;
   max-width: 523px;
   height: 60px;
@@ -127,16 +96,11 @@
   padding: 0 16px;
   gap: 10px;
   overflow: visible;
-  /* opacity: 0.1; */
   /* transition: background 0.3s ease; */
 }
 
 .input:focus {
   background: var(--dark-gray-1, #666);
-}
-
-.form-group {
-  margin-bottom: 20px;
 }
 
 .error-message {
@@ -180,7 +144,8 @@
 }
 
 .button {
-  width: 523px;
+  width: 100%;
+  max-width: 523px;
   height: 48px;
   margin-top: 15px;
   background: var(--primary-dark, #c92071);
@@ -251,38 +216,6 @@
   z-index: 100;
 }
 
-.container-image2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  right: 0;
-  margin-top: 70px;
-  top: 20rem;
-  margin-right: 6rem;
-  width: 252px;
-  height: 515px;
-  flex-shrink: 0;
-  background: url('src\assets\images\pexels2.svg') no-repeat;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  right: 0;
-  /* margin-top: 0px; */
-  top: 10rem;
-  margin-right: 22rem;
-  width: 256px;
-  height: 483px;
-  transform: rotate(-5deg);
-  transform-origin: 0% 0%;
-  flex-shrink: 0;
-  background: url('src\assets\images\pexels.svg') no-repeat;
-  z-index: 100;
-}
 
 .container-image2 {
   display: flex;
