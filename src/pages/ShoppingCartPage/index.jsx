@@ -9,10 +9,11 @@ const ShoppingCartPage = () => {
   // Use o hook useCart para acessar o estado e as funções do carrinho
   const { cartItems, removeFromCart, updateQuantity, getCartTotal } = useCart();
 
-  // Calcule o subtotal e o total usando a função do contexto
+  // Calcula o subtotal usando a função do contexto 
   const subtotal = getCartTotal();
-  const shipping = 0; // Exemplo de frete fixo ou calculado
-  const discount = 0; // Exemplo de desconto (ajuste conforme necessário)
+  const shipping = 0; // Frete grátis
+  // Calcule o desconto de 50% based on the subtotal
+  const discount = subtotal * 0.50; 
   const total = subtotal + shipping - discount;
 
   return (
@@ -37,7 +38,8 @@ const ShoppingCartPage = () => {
                 />
                 <div className='cart-item-details'>
                   <h3>{item.name}</h3>
-                  <p>Preço: R$ {(item.discountPrice || item.price).toFixed(2)}</p>
+                  {/* Display original price as R$ 200.00 */}
+                  <p>Preço: R$ 200.00</p>
                   <div className="quantity-control">
                     <button onClick={() => updateQuantity(item.id, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
                     <span>{item.quantity}</span>
@@ -45,7 +47,8 @@ const ShoppingCartPage = () => {
                   </div>
                 </div>
                 <div className='cart-item-price'>
-                  <p>R$ ((item.discountPrice || item.price) * item.quantity).toFixed(2)}</p>
+                  {/* Calculate item total using R$ 200.00 as base price for display */}
+                  <p>R$ {(200.00 * item.quantity).toFixed(2)}</p>
                   <button className='remove-item-btn' onClick={() => removeFromCart(item.id)}>Remover</button>
                 </div>
               </div>

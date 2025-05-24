@@ -66,6 +66,19 @@
   margin-bottom: 5px;
 }
 
+.quantity-control {
+  width: 100px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.quantity-control button {;
+  margin-bottom: 5px;
+}
+
 .cart-item-price {
   display: flex;
   flex-direction: column;

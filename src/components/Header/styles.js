@@ -75,6 +75,28 @@ export const Container = styled.header`
       gap: 70px;
     }
 
+    .cart-icon-container {
+        position: relative;
+        display: inline-block;
+
+        .cart-item-count {
+          position: absolute;
+          top: -2px; /* Adjust as needed */
+          right: -20px; /* Adjust as needed */
+          background-color: var(--pink); /* Use your pink color variable */
+          color: #c92071;
+          border-radius: 50%;
+          padding: 2px 6px;
+          font-size: 12px;
+          font-weight: bold;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-width: 25px; /* Ensure it's a circle */
+          height: 25px; /* Ensure it's a circle */
+        }
+      }
+
     @media (max-width: 460px) {
       display: none;
     }

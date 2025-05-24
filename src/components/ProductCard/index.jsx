@@ -1,7 +1,11 @@
 import React from 'react';
+import { useCart } from '../../contexts/CartContext'; // Importe o hook
 import { Container } from './styles'; // Supondo que você tenha um styled-component para o container
 
-const ProductCard = ({ image, name, price, priceDiscount, onAddToCart }) => {
+
+function ProductCard({ product }) { // Assumindo que o componente recebe os dados do produto como prop
+  const { addToCart } = useCart(); // Use o hook para acessar a função
+
   // Formatar os preços para exibição em formato R$ XX,XX
   const formatPrice = value => {
     return value.toLocaleString('pt-BR', {
@@ -9,6 +13,13 @@ const ProductCard = ({ image, name, price, priceDiscount, onAddToCart }) => {
       maximumFractionDigits: 2,
     });
   };
+
+  const handleAddToCart = () => {
+    addToCart(product); // Chame addToCart com os dados do produto
+  };
+
+  // Certifique-se de que as props image, name, price e priceDiscount são acessadas a partir de 'product'
+  const { image, name, price, priceDiscount } = product;
 
   return (
     <Container>
@@ -32,11 +43,9 @@ const ProductCard = ({ image, name, price, priceDiscount, onAddToCart }) => {
         )}
       </div>
       {/* Botão Adicionar ao Carrinho */}
-      <button className='add-to-cart-button' onClick={onAddToCart}>
-        Adicionar ao Carrinho
-      </button>
+      <button className='add-to-cart-button' onClick={handleAddToCart}>Adicionar ao Carrinho</button>
     </Container>
   );
-};
+}
 
 export default ProductCard;

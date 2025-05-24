@@ -141,21 +141,16 @@ const ProductListingPage = () => {
           </div>
         </aside>
 
-        {/* Grid de produtos */} 
+        {/* Grid de produtos */}
         <main className="products-grid">
           <div className="products-container">
             {products.map(product => (
               <ProductCard
                 key={product.id}
-                image={product.image}
-                name={product.name}
-                price={product.price}
-                priceDiscount={product.priceDiscount}
-                onAddToCart={() => handleAddToCart(product)} // Passa a função com o produto específico
+                product={product} 
               />
-              
             ))}
-            
+
           </div>
         </main>
       </div>

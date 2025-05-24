@@ -91,7 +91,7 @@ const App = () => {
         />
         {/* Nova rota para o carrinho */}
         <Route
-          path='/cart'
+          path='/shopping-cart' // Changed from '/cart'
           element={
             <Layout>
               <ShoppingCartPage />
