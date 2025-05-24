@@ -85,7 +85,7 @@ const Confirmacompra = () => {
 
 
 
-          <button>Realizar Pagamento</button>
+          <button >Realizar Pagamento</button>
 
         </div>
 

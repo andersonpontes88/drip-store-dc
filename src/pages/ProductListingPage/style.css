@@ -1,0 +1,233 @@
+ main {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding-top: 23px;
+     padding-bottom: 23px;
+
+ }
+
+ .container {
+
+     background-color: #FFFFFF;
+     padding: 30px;
+
+     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+
+     width: 838;
+     height: 1048;
+     top: 242px;
+     left: 301px;
+     border-radius: 4px;
+     padding: 30px;
+     gap: 20px;
+     
+
+ }
+
+
+ .section {
+     margin-bottom: 25px;
+     padding-bottom: 15px;
+     border-bottom: 1px solid #eee;
+
+     width: 778;
+     height: 152;
+     gap: 10px;
+
+ }
+
+ .section:last-child {
+     border-bottom: none;
+     margin-bottom: 0;
+     padding-bottom: 0;
+ }
+
+ h1 {
+
+     color: #1F1F1F;
+     margin-bottom: 30px;
+     font-size: 1.8em;
+     text-align: center;
+     padding-left: 40px;
+     margin-left: 30px;
+
+
+ }
+
+ h2 {
+     color: #333;
+    
+     padding-left: 4px;
+     width: 838;
+     height: 1048;
+     
+     border-radius: 4px;
+  
+     gap: 20px;
+
+ }
+
+ p {
+     color: #555;
+     line-height: 1.6;
+    
+     padding-left: 15px;
+
+     width: 178;
+height: 22;
+
+
+font-family: Inter;
+font-weight: 500;
+font-size: 14px;
+line-height: 22px;
+letter-spacing: 0.25px;
+
+
+ }
+
+ .sectionresumo {
+     display: flex;
+
+     flex-direction: column;
+
+ }
+
+ .sectionresumo h4 {
+     margin-bottom: 0;
+     padding-left: 13px;
+     padding-top: 10px;
+ }
+
+ .container-total-valor {
+     display: flex;
+     justify-content: space-between;
+     background-color: #F6AA1C0D;
+
+     width: 778;
+     height: 100;
+     border-radius: 4px;
+     border-width: 1px #F6AA1C26;
+     padding: 20px;
+
+
+ }
+
+ .valor span {
+     display: flex;
+     justify-content: end;
+
+ }
+
+ .sect {
+
+
+     text-align: center;
+
+
+ }
+
+ .tenis {
+     width: 80px;
+     height: 30px;
+     background-color: #E2E3FF;
+ }
+
+ .buttonimprimir {
+     text-align: center;
+     width: 838;
+     height: 1048;
+     top: 242px;
+     left: 301px;
+     border-radius: 4px;
+     padding: 30px;
+     gap: 20px;
+
+
+
+ }
+
+ .buttonimprimir a {
+     color: #1F1F1F;
+     text-decoration: underline;
+
+ }
+
+ .botao {
+     background-color: #F6AA1C;
+     width: 650px;
+     height: 50px;
+     border-radius: 8px;
+     margin-top: 23px;
+     margin-bottom: 30px;
+
+
+
+
+ }
+
+
+ .container-imagem-texto {
+     display: flex;
+     /* Transforma o contêiner em um Flex Container */
+     align-items: center;
+     /* Alinha os itens verticalmente ao centro */
+     gap: 5px;
+     /* Adiciona um espaço de 20px entre a imagem e o texto */
+     padding: 20px;
+
+
+
+     max-width: 900px;
+     /* Define uma largura máxima para o contêiner */
+     margin: 2px auto;
+     /* Centraliza o contêiner na página */
+
+ }
+
+
+ .lado-esquerdo {
+     flex: 1;
+     /* Permite que este lado cresça e ocupe o espaço disponível */
+     min-width: 150px;
+     /* Garante uma largura mínima para a imagem, evita que ela fique muito pequena */
+     text-align: center;
+     /* Centraliza a imagem dentro da sua div, se ela for menor que o espaço */
+ }
+
+ .lado-esquerdo img {
+     max-width: 100%;
+     /* Garante que a imagem não ultrapasse a largura do seu contêiner pai */
+     height: auto;
+     /* Mantém a proporção da imagem */
+     display: block;
+     /* Remove o espaço extra abaixo da imagem */
+     border-radius: 4px;
+     /* Opcional: bordas arredondadas para a imagem */
+ }
+
+ .lado-direito {
+     flex: 2;
+     /* Permite que este lado cresça e ocupe o dobro do espaço do lado esquerdo */
+
+ }
+
+ /* Opcional: Media Query para telas menores */
+ @media (max-width: 768px) {
+     .container-imagem-texto {
+         flex-direction: column;
+         /* Em telas menores, os itens ficam um abaixo do outro */
+         text-align: center;
+         /* Centraliza o texto quando estiver em coluna */
+     }
+
+     .lado-esquerdo,
+     .lado-direito {
+         flex: none;
+         /* Remove o flex-grow em telas pequenas */
+         width: 80%;
+         /* Ocupam a largura total */
+     }
+ }
