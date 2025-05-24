@@ -42,13 +42,7 @@ const ProductListingPage = () => {
     <div className="product-listing-page">
       {/* Breadcrumb */}
       <div className="breadcrumb">
-      <div>
-            <button className="buy-button">
-            <GiButtonFinger className="button-icon" />
-              Comprar Agora
-              </button>
-
-            </div>
+     
       </div>
 
       {/* Header com resultados e ordenação */}

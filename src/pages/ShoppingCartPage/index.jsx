@@ -1,31 +1,18 @@
 import React from 'react';
-import './ShoppingCartPage.css'; // Vamos criar este arquivo CSS em seguida
+import './ShoppingCartPage.css';
+import { useCart } from '../../contexts/CartContext'; // Importe o hook useCart
 
-// Dados mocados para o carrinho (substitua com dados reais do estado do aplicativo)
-const mockCartItems = [
-  {
-    id: 1,
-    name: 'Tênis Nike Revolution 6 Next Nature Masculino',
-    price: 219.0,
-    quantity: 1,
-    image: '/product-thumb-1.svg', // Caminho para a imagem do produto
-  },
-  {
-    id: 2,
-    name: 'Tênis Adidas Ultraboost Light Feminino',
-    price: 899.99,
-    quantity: 1,
-    image: '/product-thumb-2.svg',
-  },
-];
+// Remova os dados mocados
+// const mockCartItems = [...];
 
 const ShoppingCartPage = () => {
-  const subtotal = mockCartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+  // Use o hook useCart para acessar o estado e as funções do carrinho
+  const { cartItems, removeFromCart, updateQuantity, getCartTotal } = useCart();
+
+  // Calcule o subtotal e o total usando a função do contexto
+  const subtotal = getCartTotal();
   const shipping = 0; // Exemplo de frete fixo ou calculado
-  const discount = 30.0; // Exemplo de desconto
+  const discount = 0; // Exemplo de desconto (ajuste conforme necessário)
   const total = subtotal + shipping - discount;
 
   return (
@@ -36,26 +23,30 @@ const ShoppingCartPage = () => {
 
       <h2>Meu Carrinho</h2>
 
-      {mockCartItems.length === 0 ? (
+      {cartItems.length === 0 ? (
         <p>Seu carrinho está vazio.</p>
       ) : (
         <div className='cart-content'>
           <div className='cart-items-list'>
-            {mockCartItems.map(item => (
+            {cartItems.map(item => (
               <div key={item.id} className='cart-item'>
                 <img
-                  src={item.image}
+                  src={item.imageUrl} // Use item.imageUrl conforme definido no contexto
                   alt={item.name}
                   className='cart-item-image'
                 />
                 <div className='cart-item-details'>
                   <h3>{item.name}</h3>
-                  <p>Quantidade: {item.quantity}</p>
-                  {/* Adicionar controles para aumentar/diminuir quantidade aqui */}
+                  <p>Preço: R$ {(item.discountPrice || item.price).toFixed(2)}</p>
+                  <div className="quantity-control">
+                    <button onClick={() => updateQuantity(item.id, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
+                    <span>{item.quantity}</span>
+                    <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
+                  </div>
                 </div>
                 <div className='cart-item-price'>
-                  <p>R$ {item.price.toFixed(2)}</p>
-                  <button className='remove-item-btn'>Remover</button>
+                  <p>R$ ((item.discountPrice || item.price) * item.quantity).toFixed(2)}</p>
+                  <button className='remove-item-btn' onClick={() => removeFromCart(item.id)}>Remover</button>
                 </div>
               </div>
             ))}

@@ -1,5 +1,5 @@
 import Logo from '../Logo';
-import CartImage from '../../assets/icons/Carrinho.svg';
+import CartImage from '../../assets/icons/Buy.svg';
 import { BtnNavLink, Container, StyledNavLink } from './styles';
 import SearchIcon from '../../assets/icons/Search.svg';
 import MenuIcon from '../../assets/icons/Menu.svg';
