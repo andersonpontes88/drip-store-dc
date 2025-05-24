@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCart } from '../../contexts/CartContext'; // Importe o hook
-import { Container } from './styles'; // Supondo que você tenha um styled-component para o container
+import { Container } from './styles'; 
 
 
 function ProductCard({ product }) { // Assumindo que o componente recebe os dados do produto como prop
@@ -15,7 +15,8 @@ function ProductCard({ product }) { // Assumindo que o componente recebe os dado
   };
 
   const handleAddToCart = () => {
-    addToCart(product); // Chame addToCart com os dados do produto
+    // Pass the image URL as 'imageUrl' when adding to cart
+    addToCart({ ...product, imageUrl: '/src/assets/images/kseriesv8.png' });
   };
 
   // Certifique-se de que as props image, name, price e priceDiscount são acessadas a partir de 'product'

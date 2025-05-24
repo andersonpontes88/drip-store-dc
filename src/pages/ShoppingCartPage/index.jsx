@@ -32,7 +32,7 @@ const ShoppingCartPage = () => {
             {cartItems.map(item => (
               <div key={item.id} className='cart-item'>
                 <img
-                  src={item.imageUrl} // Use item.imageUrl conforme definido no contexto
+                  src={item.imageUrl=('/src/assets/images/kseriesv8.png')} // Use item.imageUrl conforme definido no contexto
                   alt={item.name}
                   className='cart-item-image'
                 />

@@ -81,10 +81,11 @@ export const Container = styled.header`
 
         .cart-item-count {
           position: absolute;
-          top: -2px; /* Adjust as needed */
-          right: -20px; /* Adjust as needed */
+          top: -10px; /* Adjust as needed */
+          right: -13px; /* Adjust as needed */
           background-color: var(--pink); /* Use your pink color variable */
-          color: #c92071;
+          color:var(--white);
+          background-color:  #c92071;
           border-radius: 50%;
           padding: 2px 6px;
           font-size: 12px;
@@ -92,8 +93,11 @@ export const Container = styled.header`
           display: flex;
           justify-content: center;
           align-items: center;
-          min-width: 25px; /* Ensure it's a circle */
-          height: 25px; /* Ensure it's a circle */
+          min-width: 15px;
+          min-height: 15px;
+          width: 15px;
+          height: 15px;
+          line-height: 15px; 
         }
       }
 
