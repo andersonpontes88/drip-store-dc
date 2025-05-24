@@ -1,12 +1,11 @@
 import Logo from '../Logo';
-import CartImage from '../../assets/icons/buy.svg';
+import CartImage from '../../assets/icons/Carrinho.svg';
 import { BtnNavLink, Container, StyledNavLink } from './styles';
 import SearchIcon from '../../assets/icons/Search.svg';
 import MenuIcon from '../../assets/icons/Menu.svg';
 import MenuVertIcon from '../../assets/icons/Menu-vertical.svg';
 import { useState, useEffect } from 'react';
-// Adicione Link à importação de react-router-dom
-import { useNavigate, useLocation, Link } from 'react-router-dom'; // Modificado
+import { useNavigate, useLocation } from 'react-router-dom';
 import { PrimaryBtn } from '../Buttons';
 import { InputDefault } from '../Input';
 
@@ -118,7 +117,7 @@ const Header = () => {
           )}
 
           <div className={`content-logo ${isAuthPage ? 'center-logo' : ''}`}>
-            {/* <Logo /> */}
+            <Logo />
           </div>
 
           {!isAuthPage && (
@@ -155,10 +154,7 @@ const Header = () => {
                   <BtnNavLink to='/login'>Entrar</BtnNavLink>
                 </PrimaryBtn>
 
-                {/* Envolva o ícone do carrinho com o Link */}
-                <Link to='/cart'> {/* Nova linha */}
-                  <img src={CartImage} alt='Imagem do carrinho de compras' />
-                </Link> {/* Nova linha */}
+                <img src={CartImage} alt='Imagem do carrinho de compras' />
               </div>
             </>
           )}

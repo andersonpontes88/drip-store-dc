@@ -26,7 +26,8 @@ export const Container = styled.header`
   .content-logo {
     &.center-logo {
       display: flex;
-      justify-content: center;
+      justify-content: left;
+      margin-left: 48px;
       width: 100%;
     }
   }
