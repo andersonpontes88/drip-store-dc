@@ -1,6 +1,7 @@
-import { Container } from './styles';
+import React from 'react';
+import { Container } from './styles'; // Supondo que você tenha um styled-component para o container
 
-const ProductCard = ({ image, name, price, priceDiscount }) => {
+const ProductCard = ({ image, name, price, priceDiscount, onAddToCart }) => {
   // Formatar os preços para exibição em formato R$ XX,XX
   const formatPrice = value => {
     return value.toLocaleString('pt-BR', {
@@ -30,6 +31,10 @@ const ProductCard = ({ image, name, price, priceDiscount }) => {
           <p>R$ {formatPrice(price)}</p>
         )}
       </div>
+      {/* Botão Adicionar ao Carrinho */}
+      <button className='add-to-cart-button' onClick={onAddToCart}>
+        Adicionar ao Carrinho
+      </button>
     </Container>
   );
 };
