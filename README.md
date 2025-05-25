@@ -81,7 +81,7 @@ src/
 - Components:
   - Componente `<Footer />` + CSS (logo, informações, redes sociais, direitos autorais);
   - Componente `<UserDashboard/>` + CSS  (Perfil, pedidos, informações e pagamentos);
-  - Componente `<ProductCard/>` + CSS  (Perfil, pedidos, informações e pagamentos);
+  - Componente `<ProductCard/>` + CSS;
 
 - Páginas :
   - `/CreateAccountInitialPage` + CSS 
