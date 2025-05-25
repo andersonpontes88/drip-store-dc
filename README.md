@@ -75,11 +75,19 @@ src/
 📁 Diretório: `src/assets/components`
 
 **Responsável por:**
+
+- contexts: 
+   - `/CartContext`;
 - Components:
   - Componente `<Footer />` + CSS (logo, informações, redes sociais, direitos autorais);
   - Componente `<UserDashboard/>` + CSS  (Perfil, pedidos, informações e pagamentos);
+  - Componente `<ProductCard/>` + CSS;
+
 - Páginas :
   - `/CreateAccountInitialPage` + CSS 
+  - `/ShoppingCartPage` + CSS 
+  - `/ProductListingPage` + CSS 
+  - `/ProductViewPage` + SC
   - `/CreateFormPage` + CSS 
   - `/LoginPage` + CSS 
 - Imagens:

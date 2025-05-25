@@ -14,8 +14,9 @@ export const Container = styled.div`
   }
 
   .card-product {
-    width: 100%;
-    height: 300px;
+    width: 292px;
+    height: 321px;
+    flex-shrink: 0;
     background-color: var(--white);
     display: flex;
     justify-content: center;
@@ -24,9 +25,6 @@ export const Container = styled.div`
     overflow: hidden;
     padding: 38px 20px 0;
     position: relative;
-    box-shadow:
-      rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 
     .discount {
       position: absolute;
@@ -38,12 +36,19 @@ export const Container = styled.div`
       border-radius: 29px;
       font-size: 0.9rem;
       font-weight: 700;
+      letter-spacing: 0.75px;
+      text-transform: uppercase;
     }
 
     img {
-      width: 250px;
-      height: 135px;
-      transform: rotate(30deg);
+      width: 248px;
+      height: 134px;
+      transform: rotate(-30deg);
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-30deg);
     }
   }
 
@@ -69,19 +74,26 @@ export const Container = styled.div`
     align-items: center;
 
     .original-price {
-      font-size: 1.5rem;
+      color: var(--light-gray, #8F8F8F);
+      font-feature-settings: 'liga' off, 'clig' off;
+      font-family: Inter;
+      font-size: 24px;
+      font-style: normal;
       font-weight: 400;
       line-height: 38px;
       letter-spacing: 0.75px;
-      color: var(--light-gray); /* Preço original riscado */
+      text-decoration: line-through;
     }
 
     .discount-price {
-      font-size: 1.5rem;
+      color: var(--dark-gray, #1F1F1F);
+      font-feature-settings: 'liga' off, 'clig' off;
+      font-family: Inter;
+      font-size: 24px;
+      font-style: normal;
       font-weight: 700;
       line-height: 38px;
       letter-spacing: 0.75px;
-      color: var(--dark-gray); /* Destacando o preço com desconto */
     }
   }
 

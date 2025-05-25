@@ -10,6 +10,8 @@ const LoginPage = lazy(() => import('./pages/LoginPage'));
 const CreateAccountInitialPage = lazy(
   () => import('./pages/CreateAccountInitialPage')
 );
+// Adicione a importação da nova página do carrinho
+const ShoppingCartPage = lazy(() => import('./pages/ShoppingCartPage')); // Nova linha
 
 const App = () => {
   return (
@@ -84,6 +86,15 @@ const App = () => {
           element={
             <Layout>
               <FormCreatePage />
+            </Layout>
+          }
+        />
+        {/* Nova rota para o carrinho */}
+        <Route
+          path='/shopping-cart' // Changed from '/cart'
+          element={
+            <Layout>
+              <ShoppingCartPage />
             </Layout>
           }
         />

@@ -1,5 +1,6 @@
 import Logo from '../Logo';
-import CartImage from '../../assets/icons/Carrinho.svg';
+import CartImage from '../../assets/icons/buy.svg?react'; // Importação padrão com ?react
+
 import { BtnNavLink, Container, StyledNavLink } from './styles';
 import SearchIcon from '../../assets/icons/Search.svg';
 import MenuIcon from '../../assets/icons/Menu.svg';
@@ -8,6 +9,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { PrimaryBtn } from '../Buttons';
 import { InputDefault } from '../Input';
+import { Link } from 'react-router-dom';
+import { useCart } from '../../contexts/CartContext'; // Import useCart hook
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,6 +23,10 @@ const Header = () => {
 
   // Obter a localização atual
   const location = useLocation();
+
+  // Use o hook useCart para acessar o número de itens
+  const { getCartItemCount } = useCart();
+  const cartItemCount = getCartItemCount();
 
   // Verifica se estamos em uma página de autenticação
   const isAuthPage = ['/login', '/register', '/create-account'].includes(
@@ -69,6 +76,10 @@ const Header = () => {
     // No modo mobile, alternamos a visibilidade do campo de pesquisa
     if (isMobile) {
       setShowSearch(!showSearch);
+    } else {
+      // No desktop, limpamos o termo de busca e focamos no input
+      setSearchTerm('');
+      // Pode adicionar lógica para focar no input aqui se necessário
     }
   };
 
@@ -154,7 +165,12 @@ const Header = () => {
                   <BtnNavLink to='/login'>Entrar</BtnNavLink>
                 </PrimaryBtn>
 
-                <img src={CartImage} alt='Imagem do carrinho de compras' />
+                <Link to="/shopping-cart" className="cart-icon-container"> {/* Add a class for styling */}
+                  <CartImage />
+                  {cartItemCount > 0 && ( // Only display count if greater than 0
+                    <span className="cart-item-count">{cartItemCount}</span>
+                  )}
+                </Link>
               </div>
             </>
           )}
