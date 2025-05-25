@@ -1,9 +1,10 @@
 import React from 'react';
 import { useCart } from '../../contexts/CartContext'; // Importe o hook
-import { Container } from './styles'; 
+import { Container } from './styles';
+import { Link } from 'react-router-dom'; // Import Link
 
 
-function ProductCard({ product }) { // Assumindo que o componente recebe os dados do produto como prop
+function ProductCard({ product }) {
   const { addToCart } = useCart(); // Use o hook para acessar a função
 
   // Formatar os preços para exibição em formato R$ XX,XX
@@ -24,26 +25,30 @@ function ProductCard({ product }) { // Assumindo que o componente recebe os dado
 
   return (
     <Container>
-      <div className='card-product'>
-        <div className='discount'>30% Off</div>
-        <img src={image} alt={name} />
-      </div>
+      {/* Wrap the product details in a Link component */}
+      {/* Corrected path to /produtos/${product.id} */}
+      <Link to={`/produtos/${product.id}`} className="product-link">
+        <div className='card-product'>
+          <div className='discount'>30% Off</div>
+          <img src={product.image} alt={product.name} />
+        </div>
 
-      <p>Tênis</p>
-      <h4>{name}</h4>
-      <div className='card-info'>
-        {/* Se houver um preço com desconto, mostramos o preço original riscado */}
-        {priceDiscount ? (
-          <>
-            <p className='original-price'>R$ {formatPrice(price)}</p>
-            <p className='discount-price'>R$ {formatPrice(priceDiscount)}</p>
-          </>
-        ) : (
-          // Se não houver desconto, mostramos apenas o preço normal
-          <p>R$ {formatPrice(price)}</p>
-        )}
-      </div>
-      {/* Botão Adicionar ao Carrinho */}
+        <p>Tênis</p>
+        <h4>{product.name}</h4>
+        <div className='card-info'>
+          {/* Se houver um preço com desconto, mostramos o preço original riscado */}
+          {product.priceDiscount ? (
+            <>
+              <p className='original-price'>R$ {formatPrice(product.price)}</p>
+              <p className='discount-price'>R$ {formatPrice(product.priceDiscount)}</p>
+            </>
+          ) : (
+            // Se não houver desconto, mostramos apenas o preço normal
+            <p>R$ {formatPrice(product.price)}</p>
+          )}
+        </div>
+      </Link>
+      {/* Botão Adicionar ao Carrinho - Keep this outside the link if it should not navigate */}
       <button className='add-to-cart-button' onClick={handleAddToCart}>Adicionar ao Carrinho</button>
     </Container>
   );

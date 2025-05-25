@@ -1,6 +1,7 @@
 import React from 'react';
 import './ShoppingCartPage.css';
 import { useCart } from '../../contexts/CartContext'; // Importe o hook useCart
+import { useNavigate } from 'react-router-dom'; // Importe useNavigate
 
 // Remova os dados mocados
 // const mockCartItems = [...];
@@ -8,13 +9,18 @@ import { useCart } from '../../contexts/CartContext'; // Importe o hook useCart
 const ShoppingCartPage = () => {
   // Use o hook useCart para acessar o estado e as funções do carrinho
   const { cartItems, removeFromCart, updateQuantity, getCartTotal } = useCart();
+  const navigate = useNavigate(); // Obtenha a função navigate
 
   // Calcula o subtotal usando a função do contexto 
   const subtotal = getCartTotal();
   const shipping = 0; // Frete grátis
-  // Calcule o desconto de 50% based on the subtotal
+  // Calcule o desconto de 50% baseado no subtotal
   const discount = subtotal * 0.50; 
   const total = subtotal + shipping - discount;
+
+  const handleContinueShopping = () => {
+    navigate('/produtos'); // Redireciona para a página de produtos
+  };
 
   return (
     <div className='shopping-cart-page'>
@@ -74,7 +80,7 @@ const ShoppingCartPage = () => {
               <span>R$ {total.toFixed(2)}</span>
             </div>
             <button className='checkout-button'>Ir para o Pagamento</button>
-            <button className='continue-shopping-button'>
+            <button className='continue-shopping-button' onClick={handleContinueShopping}> {/* Adicione o onClick handler */}
               Continuar Comprando
             </button>
           </div>
