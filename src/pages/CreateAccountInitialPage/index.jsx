@@ -79,7 +79,7 @@ const LoginPage = () => {
                             type="button"
                             disabled={isSubmitting}
                         >
-                            {isSubmitting ? 'Redirecionando...' : 'Criar Conta'}
+                            {isSubmitting ? 'Redirecionando...' : 'Criar conta'}
                         </button>
                     </Link>
                     </form>
