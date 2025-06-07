@@ -62,6 +62,10 @@ const ShoppingCartPage = () => {
     navigate('/produtos');
   };
 
+  const handleGoToCheckout = () => {
+    navigate('/finalizar-compra'); // Adicione esta linha para redirecionar
+  };
+
   return (
     <div className='shopping-cart-page'>
       <div className='breadcrumb'>
@@ -167,7 +171,7 @@ const ShoppingCartPage = () => {
               <span>Total:</span>
               <span>R$ {total.toFixed(2)}</span>
             </div>
-            <button className='checkout-button'>Ir para o Pagamento</button>
+            <button className='checkout-button' onClick={handleGoToCheckout}>Ir para o Pagamento</button>
             <button className='continue-shopping-button' onClick={handleContinueShopping}>
               Continuar Comprando
             </button>
