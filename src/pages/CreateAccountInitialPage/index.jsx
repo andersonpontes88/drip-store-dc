@@ -73,7 +73,7 @@ const LoginPage = () => {
                    
                   
                     {/* Botão de envio do formulário, desabilitado enquanto está enviando */}
-                    <Link to="/criar-conta" style={{ textDecoration: 'none' }}>
+                    <Link to="/create-account" style={{ textDecoration: 'none' }}>
                         <button
                             className='button'
                             type="button"

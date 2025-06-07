@@ -83,7 +83,7 @@ const App = () => {
           }
         />
         <Route
-          path='/create-account'
+          path='/create-account' 
           element={
             <Layout>
               <FormCreatePage />
